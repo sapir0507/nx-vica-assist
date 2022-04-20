@@ -1,0 +1,28 @@
+{
+  "root": "apps/vication-assist-e2e",
+  "sourceRoot": "apps/vication-assist-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/vication-assist-e2e/cypress.json",
+        "devServerTarget": "vication-assist:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "vication-assist:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vication-assist-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["vication-assist"]
+}

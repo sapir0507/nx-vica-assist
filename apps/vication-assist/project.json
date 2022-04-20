@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/vication-assist",
+  "sourceRoot": "apps/vication-assist/src",
+  "prefix": "proj",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/vication-assist",
+        "index": "apps/vication-assist/src/index.html",
+        "main": "apps/vication-assist/src/main.ts",
+        "polyfills": "apps/vication-assist/src/polyfills.ts",
+        "tsConfig": "apps/vication-assist/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/vication-assist/src/favicon.ico",
+          "apps/vication-assist/src/assets"
+        ],
+        "styles": ["apps/vication-assist/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/vication-assist/src/environments/environment.ts",
+              "with": "apps/vication-assist/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "vication-assist:build:production"
+        },
+        "development": {
+          "browserTarget": "vication-assist:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "vication-assist:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/vication-assist/src/**/*.ts",
+          "apps/vication-assist/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vication-assist"],
+      "options": {
+        "jestConfig": "apps/vication-assist/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
