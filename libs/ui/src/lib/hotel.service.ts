@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { Hotel, HotelRequest } from './hotel.interface';
+import { environment } from './env';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class HotelService {
   private hotelArray: Hotel[] = [];
   private _hotel$: BehaviorSubject<Hotel[]> = new BehaviorSubject(this.hotelArray);
   public hotel$: Observable<Hotel[]> = this._hotel$.asObservable();
-  private readonly HotelsServiceUrl =  'http://localhost:3000/hotels';
+  private readonly HotelsServiceUrl = environment.api + 'hotels';
 
   constructor(private http: HttpClient) { }
 
