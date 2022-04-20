@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './session/login/login.component';
 
 @NgModule({
   imports: [
@@ -10,5 +11,6 @@ import { RouterModule } from '@angular/router';
       /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
     ]),
   ],
+  declarations: [LoginComponent],
 })
 export class LoginModule {}
