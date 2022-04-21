@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/vication-assist",
         "index": "apps/vication-assist/src/index.html",
@@ -18,7 +20,10 @@
           "apps/vication-assist/src/favicon.ico",
           "apps/vication-assist/src/assets"
         ],
-        "styles": ["apps/vication-assist/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/vication-assist/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -83,7 +88,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/vication-assist"],
+      "outputs": [
+        "coverage/apps/vication-assist"
+      ],
       "options": {
         "jestConfig": "apps/vication-assist/jest.config.js",
         "passWithNoTests": true

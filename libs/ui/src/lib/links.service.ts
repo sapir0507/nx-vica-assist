@@ -25,7 +25,7 @@ export class LinksService {
     name: 'Choose Hotel'
   }];
   private navbarLinks_all: Array<Links> = [{
-    link: '',
+    link: '/homepage',
     name: 'Homepage'
   },
   {
