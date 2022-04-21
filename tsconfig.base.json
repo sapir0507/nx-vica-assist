@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@proj/header": ["libs/header/src/index.ts"],
       "@proj/login": ["libs/login/src/index.ts"],
       "@proj/ui": ["libs/ui/src/index.ts"]
     }

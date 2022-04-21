@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "header": "libs/header",
     "login": "libs/login",
     "ui": "libs/ui",
     "vication-assist": "apps/vication-assist",

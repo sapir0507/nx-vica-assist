@@ -1,0 +1,41 @@
+$font-size: 13px;
+$font-family-links: Arial, Helvetica, sans-serif;
+$font-family-h1: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+:host{
+
+   .all-links{
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: 1fr;
+       column-gap: 5px;
+       height: 4.5vh;
+    a{
+       
+        color: white;
+        font-size: $font-size;
+        font-family: $font-family-links;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 10px;
+        margin: 6px;
+        &:hover{
+            background-color: rgba($color: rgb(95, 94, 94), $alpha: 0.9);
+            color: lightblue;
+        }
+    }
+       
+    }
+
+    .side-bar-links{
+            a{
+                color: white;
+                &:hover{
+                    color: red;
+                }
+            }
+
+        
+        
+    }
+
+}
